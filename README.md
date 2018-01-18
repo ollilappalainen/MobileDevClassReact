@@ -8,11 +8,11 @@
 
 ## Contains Exercises
 
-    ### HelloComponent
-        * Uses props to create a simple hello message
+### HelloComponent
+* Uses props to create a simple hello message
 
-    ### CounterComponent
-        * Uses state for increasing, decreasing and reseting counter value
+### CounterComponent
+* Uses state for increasing, decreasing and reseting counter value
 
-    ### WeatherComponent
-        * Uses fetch() to get weather data from OpenWeatherApi
+### WeatherComponent
+* Uses fetch() to get weather data from OpenWeatherApi
