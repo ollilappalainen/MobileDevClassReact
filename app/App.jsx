@@ -1,14 +1,30 @@
 import React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.less';
+import Hello from './Hello/Hello.jsx';
+import Counter from './Counter/Counter.jsx';
+import Weather from './Weather/Weather.jsx';
 
 export default class App extends React.Component {
+  constructor () {
+    super();    
+  }
+  
   render() {
     return (
-      <MuiThemeProvider>
-        <div className="app-main">
+      <div className="app-main">
+        <div>
+          <h3>Ex 1</h3>
+          <Hello name="Jorma" location="universe" />
+        </div>        
+        <div>
+          <h3>Ex 2</h3>
+          <Counter />
         </div>          
-      </MuiThemeProvider>
+        <div>
+          <h3>Ex 3</h3>
+          <Weather />
+        </div>
+      </div>
     );
   }
 }
