@@ -3,6 +3,7 @@ import './App.less';
 import Hello from './Hello/Hello.jsx';
 import Counter from './Counter/Counter.jsx';
 import Weather from './Weather/Weather.jsx';
+import GitHubRepoList from './GitHubRepoList/GitHubRepoList.jsx';
 
 export default class App extends React.Component {
   constructor () {
@@ -23,6 +24,10 @@ export default class App extends React.Component {
         <div>
           <h3>Ex 3</h3>
           <Weather />
+        </div>
+        <div>
+          <h3>Ex 4</h3>
+          <GitHubRepoList />
         </div>
       </div>
     );
