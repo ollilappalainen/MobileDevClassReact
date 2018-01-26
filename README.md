@@ -8,11 +8,15 @@
 
 ## Contains Exercises
 
-### HelloComponent
+### Hello Component
 * Uses props to create a simple hello message
 
-### CounterComponent
+### Counter Component
 * Uses state for increasing, decreasing and reseting counter value
 
-### WeatherComponent
+### Weather Component
 * Uses fetch() to get weather data from OpenWeatherApi
+
+### GitHubRepoList Component
+* Component uses input keyword to fetch repository list from GitHub Api. Then posts the results into a table.
+* Reset button resets search values and repository list.
