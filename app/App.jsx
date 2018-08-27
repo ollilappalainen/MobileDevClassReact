@@ -37,13 +37,18 @@ export default class App extends React.Component {
     }
 
     render() {
-        const todos = this.state.todos.map((todo, index) =>
-            <tr key={index} className="todo-output__tbody-row">
-                <td>{todo.date}</td>
-                <td>{todo.description}</td>
-                <td><button onClick={this.deleteTodo.bind(this, todo)}>DELETE</button></td>
-            </tr>
-        );
+        let todos;
+        if (this.state.todos.length > 0) {
+            todos = this.state.todos.map((todo, index) =>
+                <tr key={index} className="todo-output__tbody-row">
+                    <td>{todo.date}</td>
+                    <td>{todo.description}</td>
+                    <td><button onClick={this.deleteTodo.bind(this, todo)}>DELETE</button></td>
+                </tr>
+            );
+        } else {
+            todos = <tr><td colSpan="2">No todos. Pls make one.</td></tr>;
+        }
 
         return (
             <div className="app">
