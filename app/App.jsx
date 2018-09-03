@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.less';
+import TodoTable from './TodoTable/todo-table';
 
 export default class App extends React.Component {
     constructor () {
@@ -68,17 +69,7 @@ export default class App extends React.Component {
                     </form>
                 </div>
                 <div className="todo-output__wrapper">
-                    <table className="todo-output__table">
-                        <thead className="todo-output__thead">
-                            <tr className="todo-output__thead-row">
-                                <th className="todo-output__thead-text">Date</th>
-                                <th className="todo-output__thead-text">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody className="todo-output__tbody">
-                            {todos}
-                        </tbody>
-                    </table>
+                    <TodoTable tableData={this.state.todos} deleteTodo={this.deleteTodo} />                    
                 </div>
             </div>
         );

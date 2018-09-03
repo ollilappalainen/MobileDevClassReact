@@ -7,9 +7,6 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
-// const ResolverPlugin = new webpack.ResolverPlugin([
-//   new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-// ]);
 
 module.exports = {
   entry: './app/index.js',
@@ -17,14 +14,34 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
   },
+  resolve: {
+    extensions: ['.jsx', '.json', '.js']
+  },
   module: {
     rules: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']},
+      { 
+        test: /\.js$/, 
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        } 
+      },
+      { 
+        test: /\.jsx$/, 
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      { 
+        test: /\.less$/, 
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      { 
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
     ]
   },
-  plugins: [
-    HtmlWebpackPluginConfig
-  ]  
+  plugins: [HtmlWebpackPluginConfig]  
 }
